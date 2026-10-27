@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction - Zagros Academy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="/static/css/lesson.css">
+</head>
+
+<body>
+    <div class="lesson-app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">Z⁴</div>
+                <h1>Python</h1>
+                <p>PYTHON HOME</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-home">
+                    <a href="/" class="menu-home-link">
+                        <span class="icon">🏠</span>
+                        <span>Home</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python HOME</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('introduction')" class="menu-link active">Python Intro</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('getting-started')" class="menu-link">Python Get Started</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Syntax</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('syntax')" class="menu-link">Syntax</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('comments')" class="menu-link">Comments</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Variables</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('variables')" class="menu-link">Variables</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('variable-names')" class="menu-link">Variable Names</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('casting')" class="menu-link">Casting</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-area">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <a href="/" class="header-btn home-btn">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                    <a href="/chat/" class="header-btn chat-btn">
+                        <span>🤖</span>
+                        <span>ZAI Chat</span>
+                    </a>
+                </div>
+
+                <div class="header-center">
+                    <h2 id="lesson-title">Introduction</h2>
+                </div>
+
+                <div class="header-right">
+                    <button class="bookmark-btn" id="bookmark-btn" onclick="toggleBookmark()">
+                        <span>🔖</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content">
+                <div id="lesson-content" class="lesson-content">
+                    <!-- Content will load here from database -->
+                    <div class="loading">Loading lesson...</div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation">
+                <button class="nav-btn" id="prev-btn" onclick="previousLesson()" disabled>
+                    ← Previous
+                </button>
+                <span class="lesson-counter">
+                    <span id="lesson-counter">1</span>
+                </span>
+                <button class="nav-btn" id="next-btn" onclick="nextLesson()">
+                    Next →
+                </button>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>© 2026 Zagros Academy - تۆقۆلایی بە کوردی</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/static/js/lesson.js"></script>
+</body>
+
+</html>

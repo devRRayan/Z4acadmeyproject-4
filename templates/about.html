@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دەربارەی ئێمە - Zagros Academy</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="a-nav">
+        <a href="/" class="logo">Z⁴ academy</a>
+        <div>
+            <a href="/">سەرەکی</a>
+            <a href="/practice/">ڕاهێنانەکان</a>
+            <a href="/chat/">خولەکان</a>
+        </div>
+    </nav>
+
+    <!-- hero -->
+    <section class="a-hero">
+        <h1>دەربارەی ئێمە</h1>
+        <p>زاگرۆس ئەکادیمی یەکەمین پلاتفۆرمی فێرکردنی تەکنەلۆجیایە بە زمانی کوردی، دروستکراوە بۆ ئەوەی هەر کوردێک بتوانێت بە زمانی دایکی فێری بەرنامەسازی و تەکنەلۆجیا بێت.</p>
+    </section>
+
+    <!-- founder -->
+    <section class="a-founder">
+        <img class="a-photo" src="{% static 'img/IMG_5069.PNG' %}" alt="ڕەیان حوسێن - Avatar">
+        <div class="a-bio">
+            <div class="role">دامەزرێنەر و خاوەنی پڕۆژە</div>
+            <h2>ڕەیان حوسێن</h2>
+            <p>من ڕەیان حوسێنم، دامەزرێنەری زاگرۆس ئەکادیمی. باوەڕم وایە کە زانیاری و تەکنەلۆجیا دەبێت بۆ هەمووان بەردەست بێت — بەتایبەت بە زمانی دایکمان، کوردی.</p>
+            <p>ئامانجی ئێمە ئەوەیە کە نەتەوە و وڵاتەکەمان بەهێز بکەین لە ڕێگەی فێربوونی تەکنەلۆجیاوە، بەبێ کۆسپی زمان. هەر کوردێک شایەنی ئەوەیە کە فێر بێت و گەشە بکات.</p>
+        </div>
+    </section>
+
+    <!-- mission -->
+    <section class="a-mission">
+        <h2>ئامانجەکانمان</h2>
+        <div class="a-cards">
+            <div class="a-card">
+                <div class="ic">🌍</div>
+                <h3>زمانی کوردی</h3>
+                <p>فێرکردنی تەکنەلۆجیا بە زمانی دایک، تاکو تێگەیشتن ئاسانتر بێت.</p>
+            </div>
+            <div class="a-card">
+                <div class="ic">💪</div>
+                <h3>بەهێزکردنی نەتەوە</h3>
+                <p>بەهێزکردنی وڵات و نەتەوەکەمان لە ڕێگەی زانست و تەکنەلۆجیاوە.</p>
+            </div>
+            <div class="a-card">
+                <div class="ic">🎓</div>
+                <h3>فێربوون بۆ هەمووان</h3>
+                <p>پەروەردەی بەخۆڕایی و بەردەست بۆ هەموو کوردێک لە هەر شوێنێک.</p>
+            </div>
+            <div class="a-card">
+                <div class="ic">🚀</div>
+                <h3>داهاتووی ڕووناک</h3>
+                <p>ئامادەکردنی نەوەی نوێ بۆ بازاڕی کار و داهێنان لە تەکنەلۆجیادا.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact -->
+    <section class="a-contact">
+        <h2>پەیوەندیمان پێوە بکە</h2>
+        <div class="a-links">
+            <a class="a-link a-wa" href="https://wa.me/9647727754500" target="_blank">
+                <span class="ic">📱</span> WhatsApp: 07727754500
+            </a>
+            <a class="a-link a-ig" href="https://instagram.com/reyan_hussein" target="_blank">
+                <span class="ic">📷</span> Instagram: reyan_hussein
+            </a>
+        </div>
+    </section>
+
+    <footer class="a-footer">
+        <p>© ٢٠٢٦ Zagros Academy — هەموو مافێک پارێزراوە</p>
+    </footer>
+
+    <script src="{% static 'js/about.js' %}?v=1"></script>
+</body>
+
+</html>

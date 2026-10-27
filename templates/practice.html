@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ڕاهێنانەکان و تاقیکردنەوەکان - Zagros Academy</title>
+    <link rel="stylesheet" href="{% static 'css/practice.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="p-nav">
+        <a href="/" class="logo">Z⁴ academy</a>
+        <a href="/">🏠 سەرەکی</a>
+    </nav>
+
+    <div class="p-header">
+        <h1>ڕاهێنانەکان و تاقیکردنەوەکان</h1>
+        <p>خولێک هەڵبژێرە بۆ ڕاهێنان یان تاقیکردنەوە</p>
+    </div>
+
+    <div class="p-grid" id="p-grid">
+        <div style="padding:20px;color:#888;">⏳ بارکردن...</div>
+    </div>
+
+    <!-- choice popup -->
+    <div class="overlay" id="overlay">
+        <div class="choice-box">
+            <h2 id="choice-title">خول</h2>
+            <div class="choice-btns">
+                <button class="choice-btn choice-ex" onclick="goExercise()">✍️ ڕاهێنان (Exercises)</button>
+                <button class="choice-btn choice-qz" onclick="goQuiz()">📝 تاقیکردنەوە (Quiz)</button>
+                <button class="choice-btn choice-close" onclick="closeChoice()">داخستن</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/practice.js' %}?v=1"></script>
+</body>
+
+</html>

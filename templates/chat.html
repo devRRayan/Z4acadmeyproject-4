@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAI - Zagros Academy</title>
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-logo">
+
+                </div>
+                <div class="sidebar-search">
+                    <input type="text" placeholder="گەڕان...">
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <a href="/" class="menu-item">
+                    <span class="menu-icon">🏠</span>
+                    <span>سەرەکی</span>
+                </a>
+                <a href="/chat/" class="menu-item active">
+                    <span class="menu-icon">🤖</span>
+                    <span>ZAI چات</span>
+                </a>
+                <div class="menu-item" onclick="clearChat()">
+                    <span class="menu-icon">✏️</span>
+                    <span>چاتی نوێ</span>
+                </div>
+                <div class="menu-item" onclick="deleteChat()">
+                    <span class="menu-icon">🗑️</span>
+                    <span>سڕینەوەی چات</span>
+                </div>
+            </div>
+            <div class="sidebar-bottom">
+                <div class="user-info">
+                    <div class="user-avatar">Z</div>
+                    <div>
+                        <p class="user-name">Zagros Academy</p>
+                        <p class="user-status">● ئامادەیە</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CHAT -->
+        <div class="main">
+
+            <!-- TOP BAR -->
+            <div class="topbar">
+                <div class="topbar-right">
+                    <div class="topic-pill" id="topic-badge">💬 گشتی</div>
+                </div>
+                <div class="topbar-left">
+                    <h4>ZAI</h4>
+                    <span class="status">● ئامادەیە</span>
+                </div>
+            </div>
+
+            <!-- MESSAGES -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-screen">
+                    <div class="welcome-avatar">Z</div>
+                    <h2>بەخێربێیت بۆ ZAI</h2>
+                    <p>یاریدەدەری زیرەکی دەستکردی Zagros Academy بە کوردی</p>
+                    <div class="quick-actions">
+                        <button class="quick-card" onclick="quickTopic('python', 'Python')">
+                            <span>🐍</span>
+                            <strong>Python</strong>
+                            <small>فێربوونی پایتۆن</small>
+                        </button>
+                        <button class="quick-card" onclick="quickTopic('html', 'HTML')">
+                            <span>🌐</span>
+                            <strong>HTML</strong>
+                            <small>دروستکردنی وێبسایت</small>
+                        </button>
+                        <button class="quick-card" onclick="quickTopic('ai', 'AI')">
+                            <span>🤖</span>
+                            <strong>AI</strong>
+                            <small>زیرەکی دەستکرد</small>
+                        </button>
+                        <button class="quick-card" onclick="quickTopic('cybersecurity', 'Cybersecurity')">
+                            <span>🛡️</span>
+                            <strong>Cybersecurity</strong>
+                            <small>ئەمنیەتی سایبەر</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOPICS MENU POPUP -->
+            <div class="topics-popup" id="topics-popup">
+                <div class="topics-popup-header">
+                    <button onclick="closeTopics()">✕</button>
+                    <span>بابەتەکان هەڵبژێرە</span>
+                </div>
+                <div class="topics-grid">
+                    <button class="topic-item" onclick="quickTopic('python', 'Python')"><span>🐍</span>/python</button>
+                    <button class="topic-item" onclick="quickTopic('html', 'HTML')"><span>🌐</span>/html</button>
+                    <button class="topic-item" onclick="quickTopic('css', 'CSS')"><span>🎨</span>/css</button>
+                    <button class="topic-item" onclick="quickTopic('javascript', 'JavaScript')"><span>⚡</span>/javascript</button>
+                    <button class="topic-item" onclick="quickTopic('cplusplus', 'C++')"><span>⚙️</span>/c++</button>
+                    <button class="topic-item" onclick="quickTopic('csharp', 'C#')"><span>💎</span>/csharp</button>
+                    <button class="topic-item" onclick="quickTopic('java', 'Java')"><span>☕</span>/java</button>
+                    <button class="topic-item" onclick="quickTopic('flutter', 'Flutter')"><span>📱</span>/flutter</button>
+                    <button class="topic-item" onclick="quickTopic('sql', 'SQL')"><span>🗄️</span>/sql</button>
+                    <button class="topic-item" onclick="quickTopic('php', 'PHP')"><span>🖥️</span>/php</button>
+                    <button class="topic-item" onclick="quickTopic('ai', 'AI')"><span>🤖</span>/ai</button>
+                    <button class="topic-item" onclick="quickTopic('cybersecurity', 'Cybersecurity')"><span>🛡️</span>/cybersecurity</button>
+                    <button class="topic-item" onclick="quickTopic('ccna', 'CCNA')"><span>🌐</span>/ccna</button>
+                    <button class="topic-item" onclick="quickTopic('networking', 'Networking')"><span>📡</span>/networking</button>
+                    <button class="topic-item" onclick="quickTopic('datascience', 'Data Science')"><span>📊</span>/datascience</button>
+                </div>
+            </div>
+
+            <!-- INPUT -->
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <button class="input-btn topics-trigger" onclick="toggleTopics()" id="topics-btn" title="بابەتەکان">
+                        ☰
+                    </button>
+                    <textarea id="user-input" placeholder="پرسیارەکەت بنووسە بە کوردی..." rows="1" onkeydown="handleKey(event)"></textarea>
+                    <button class="send-btn" onclick="sendMessage()" id="send-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="{% static 'js/chat.js' %}?v=25"></script>
+
+</html>

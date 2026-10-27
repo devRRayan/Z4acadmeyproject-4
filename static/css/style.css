@@ -1,0 +1,458 @@
+/* ==========================================
+   1. GLOBAL STYLES & RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Naskh Arabic', 'Segoe UI', Tahoma, sans-serif;
+    background: #ffffff;
+    color: #111;
+    direction: rtl;
+}
+
+
+/* ==========================================
+   2. NAVIGATION BAR
+   ========================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 40px;
+    animation: fadeDown 0.6s ease both;
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    direction: ltr;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-z {
+    font-size: 28px;
+    font-weight: 900;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 4px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.nav-btns {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    direction: rtl;
+}
+
+.btn-login {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: 1px solid #555;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-login:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.btn-register {
+    background: #fff;
+    color: #111;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.btn-register:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   3. HERO SECTION
+   ========================================== */
+
+.hero {
+    background: #f5f5f5;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-tag {
+    display: block;
+    font-size: 38px;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    min-height: 60px;
+}
+
+.hero-tag .bracket {
+    color: #999;
+    font-family: 'Courier New', monospace;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.cursor {
+    display: inline-block;
+    color: #111;
+    font-weight: 100;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-sub {
+    font-size: 17px;
+    color: #777;
+    margin-bottom: 36px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-start {
+    background: #111;
+    color: #fff;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-start:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+.btn-explore {
+    background: transparent;
+    color: #111;
+    padding: 14px 36px;
+    border-radius: 8px;
+    border: 2px solid #111;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-explore:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   4. COURSES GRID & CARDS
+   ========================================== */
+
+.courses {
+    padding: 80px 48px;
+    background: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #555;
+    margin: 48px 0 24px;
+    position: relative;
+}
+
+.sub-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #111;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.course-card {
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    /* Animation base state */
+    opacity: 1;
+    transform: translateY(40px);
+    /* Smooth transition presets */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, opacity 0.5s ease-out;
+}
+
+
+/* Scroll target visibility injector */
+
+.course-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.course-card.visible:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.course-icon {
+    margin-bottom: 16px;
+}
+
+.course-icon img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.course-card:hover .course-icon img {
+    transform: rotateY(20deg) scale(1.15) translateY(-4px);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+}
+
+.course-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.course-card p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   5. FOOTER
+   ========================================== */
+
+.footer {
+    background: #111;
+    color: #888;
+    text-align: center;
+    padding: 24px;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   6. CORE ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 1;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-delay {
+    animation: slideIn 0.8s ease 0.5s both;
+}
+
+.animate-fade-delay {
+    animation: fadeIn 0.8s ease 0.7s both;
+}
+
+
+/* ==========================================
+   7. MEDIA QUERIES & RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 40px;
+    }
+    .nav-right {
+        display: flex;
+        align-items: center;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        flex-direction: row;
+        gap: 28px;
+        align-items: center;
+    }
+    .nav-btns {
+        display: none;
+    }
+    .hero-tag {
+        font-size: 24px;
+    }
+    .hero-sub {
+        font-size: 15px;
+    }
+    .courses {
+        padding: 48px 20px;
+    }
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+    }
+    .btn-start,
+    .btn-explore {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-tag {
+        font-size: 18px;
+    }
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

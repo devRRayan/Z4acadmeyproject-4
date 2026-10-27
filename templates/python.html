@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تۆتۆریالی پایتۆن - Zagros Academy</title>
+    <link rel="stylesheet" href="{% static 'css/python.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="learn-app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">Z⁴</div>
+                <h1>پایتۆن</h1>
+                <p>Python</p>
+            </div>
+
+            <nav class="sidebar-menu">
+                <div class="menu-home">
+                    <a href="/" class="menu-home-link">
+                        <span class="icon">🏠</span>
+                        <span>Home</span>
+                    </a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python HOME</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('intro')" class="menu-link active">Python Intro</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('getstarted')" class="menu-link">Python Get Started</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Syntax</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('syntax')" class="menu-link">Syntax</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('comments')" class="menu-link">Comments</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Variables</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('variables')" class="menu-link">Variables</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('naming')" class="menu-link">Variable Names</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('casting')" class="menu-link">Casting</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Data Types</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('datatypes')" class="menu-link">Data Types</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('strings')" class="menu-link">Strings</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('numbers')" class="menu-link">Numbers</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Collections</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('lists')" class="menu-link">Lists</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('tuples')" class="menu-link">Tuples</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('dictionaries')" class="menu-link">Dictionaries</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python If...Else</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('ifelse')" class="menu-link">If...Else</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Loops</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('loops')" class="menu-link">While Loops</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('forloops')" class="menu-link">For Loops</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Functions</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('functions')" class="menu-link">Functions</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('lambda')" class="menu-link">Lambda</a>
+                </div>
+
+                <div class="menu-section">
+                    <h3 class="menu-title">Python Classes</h3>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('classes')" class="menu-link">Classes and Objects</a>
+                </div>
+
+                <div class="menu-item">
+                    <a href="#" onclick="loadLesson('operators')" class="menu-link">Operators</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-area">
+
+            <!-- HEADER -->
+            <header class="header">
+                <div class="header-left">
+                    <a href="/" class="header-btn home-btn" title="سەرەکی">
+                        <span>🏠</span> گەڕانەوە
+                    </a>
+                    <a href="/chat/?course=python" class="header-btn chat-btn" title="ZAI Chat">
+                        <span>🤖</span> ZAI چات
+                    </a>
+                </div>
+                <div class="header-center">
+                    <h2 id="lesson-title">Python Basics</h2>
+                </div>
+                <div class="header-right">
+                    <button class="bookmark-btn" onclick="toggleBookmark()" title="نیشانەکردن">🔖</button>
+                </div>
+            </header>
+
+            <!-- PROGRESS BAR -->
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+                <span class="progress-text" id="progress-text">1 / 16</span>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content">
+
+                <!-- LESSON CONTENT WILL LOAD HERE -->
+                <div id="lesson-content" class="lesson-content">
+                    <div class="loading">Loading lesson...</div>
+                </div>
+
+                <!-- LIVE CODE COMPILER SECTION -->
+                <div class="compiler-section">
+                    <div class="compiler-header">
+                        <h3>
+                            <span>💻</span> Live Python Compiler
+                        </h3>
+                        <button class="run-code-btn" onclick="runCode()">
+                            <span>▶</span>
+                            Run Code
+                        </button>
+                    </div>
+                    <div class="compiler-body">
+                        <div class="editor-panel">
+                            <div class="editor-label">📝 Write Your Code</div>
+                            <textarea id="codeInput" placeholder="# Write Python code here...
+print('Hello, World!')
+name = 'Ahmed'
+age = 25
+print(f'Name: {name}, Age: {age}')"></textarea>
+                        </div>
+                        <div class="output-panel">
+                            <div class="output-label">📤 Output</div>
+                            <div id="output">Click "Run Code" to execute...</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- NAVIGATION -->
+            <div class="navigation">
+                <button class="nav-btn prev-btn" id="prev-btn" onclick="previousLesson()">
+                    <span>←</span> پێشتر
+                </button>
+                <span class="lesson-counter" id="lesson-counter">1 / 16</span>
+                <button class="nav-btn next-btn" id="next-btn" onclick="nextLesson()">
+                    دواتر <span>→</span>
+                </button>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer">
+                <p>© 2026 Zagros Academy - تۆتۆریالی پایتۆن بە کوردی</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="{% static 'js/python.js' %}"></script>
+</body>
+
+</html>

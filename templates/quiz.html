@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تاقیکردنەوە - Zagros Academy</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="q-nav">
+        <a href="/practice/">⟶ گەڕانەوە</a>
+        <span>📝 تاقیکردنەوە: <b id="q-course-name"></b></span>
+        <a href="/">🏠</a>
+    </nav>
+
+    <div class="q-wrap" id="q-wrap">
+        <div style="text-align:center;padding:30px;color:#888;">⏳ بارکردن...</div>
+    </div>
+
+    <script src="{% static 'js/quiz.js' %}?v=2"></script>
+</body>
+
+</html>
